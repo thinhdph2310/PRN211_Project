@@ -26,6 +26,21 @@ namespace DataAccess
             }
         }
 
+        public IEnumerable<Product> GetProducts()
+        {
+            var list = new List<Product>();
+            try
+            {
+                using var context = new ShoeManagementContext();
+                list = context.Products.Where(pro => pro.Status == true).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return list;
+        }
+
         public Product GetProductByID(int id)
         {
             Product pro = null;
@@ -33,6 +48,21 @@ namespace DataAccess
             {
                 using var context = new ShoeManagementContext();
                 pro = context.Products.SingleOrDefault(pro => pro.ProductId == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return pro;
+        }
+
+        public IEnumerable<Product> GetProductByName(String name)
+        {
+            var pro = new List<Product>();
+            try
+            {
+                using var context = new ShoeManagementContext();
+                pro = context.Products.Where(pro => (pro.ProductName.Contains(name) && pro.Status == true)).ToList();
             }
             catch (Exception ex)
             {
@@ -93,7 +123,8 @@ namespace DataAccess
                 if (result != null)
                 {
                     using var context = new ShoeManagementContext();
-                    context.Products.Remove(result);
+                    result.Status = false;
+                    context.Products.Update(result);
                     context.SaveChanges();
                 }
                 else

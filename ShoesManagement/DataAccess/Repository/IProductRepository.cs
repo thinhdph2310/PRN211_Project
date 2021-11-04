@@ -9,6 +9,8 @@ namespace DataAccess.Repository
 {
     public interface IProductRepository
     {
+        IEnumerable<Product> GetProductByName(String name);
+        IEnumerable<Product> GetProducts();
         Product GetProductByID(int id);
         void InsertProduct(Product pro);
         void DeleteProduct(int id);
