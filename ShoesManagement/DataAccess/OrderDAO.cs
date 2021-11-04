@@ -1,4 +1,5 @@
-﻿using DataAccess.DataAccess;
+﻿using BusinessObject;
+using DataAccess.DataAccess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -105,6 +106,38 @@ namespace DataAccess
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public List<CustomerOrder> GetCustomerOrders()
+        {
+            var result = new List<CustomerOrder>();
+            try
+            {
+                using var context = new ShoeManagementContext();
+                result = context.Customers.Join(
+                    context.Orders,
+                    customer => customer.CustomerId,
+                    order => order.CustomerId,
+                    (customer, order) => new { customer, order }
+                ).Join(
+                    context.Users,
+                    combined => combined.order.UserId,
+                    user => user.UserId,
+                    (combinedTable, user) => new CustomerOrder
+                    {
+                        OrderId = combinedTable.order.OrderId,
+                        StaffName = user.FullName,
+                        CustomerName = combinedTable.customer.FullName,
+                        Idnumber = combinedTable.customer.Idnumber,
+                        Total = combinedTable.order.Total,
+                        OrderDate = combinedTable.order.OrderDate
+                    }).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return result;
         }
     }
 }

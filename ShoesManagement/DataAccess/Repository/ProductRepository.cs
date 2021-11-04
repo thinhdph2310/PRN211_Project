@@ -9,7 +9,8 @@ namespace DataAccess.Repository
 {
     public class ProductRepository : IProductRepository
     {
-        public IEnumerable<Product> GetProductByName(String name) => ProductDAO.Instance.GetProductByName(name);
+        public IEnumerable<Product> GetProductsByName(String name) => ProductDAO.Instance.GetProductsByName(name);
+        public Product GetProductByName(String name) => ProductDAO.Instance.GetProductByName(name);
         public IEnumerable<Product> GetProducts() => ProductDAO.Instance.GetProducts();
         public Product GetProductByID(int id) => ProductDAO.Instance.GetProductByID(id);
         public void InsertProduct(Product pro) => ProductDAO.Instance.AddNew(pro);

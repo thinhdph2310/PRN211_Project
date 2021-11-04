@@ -73,6 +73,46 @@ namespace ShoeManagementApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _470_4708030_my_order_svg_png_icon_free_download_my_order_icon_png {
+            get {
+                object obj = ResourceManager.GetObject("470-4708030_my-order-svg-png-icon-free-download-my-order-icon-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _470_4708030_my_order_svg_png_icon_free_download_my_order_icon_png1 {
+            get {
+                object obj = ResourceManager.GetObject("470-4708030_my-order-svg-png-icon-free-download-my-order-icon-png1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _470_4708030_my_order_svg_png_icon_free_download_my_order_icon_png2 {
+            get {
+                object obj = ResourceManager.GetObject("470-4708030_my-order-svg-png-icon-free-download-my-order-icon-png2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap order_icon {
+            get {
+                object obj = ResourceManager.GetObject("order-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shoe_icon {
             get {
                 object obj = ResourceManager.GetObject("shoe-icon", resourceCulture);

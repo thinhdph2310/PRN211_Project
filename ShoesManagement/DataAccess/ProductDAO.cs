@@ -47,7 +47,7 @@ namespace DataAccess
             try
             {
                 using var context = new ShoeManagementContext();
-                pro = context.Products.SingleOrDefault(pro => pro.ProductId == id);
+                pro = context.Products.SingleOrDefault(pro => (pro.ProductId == id && pro.Status == true));
             }
             catch (Exception ex)
             {
@@ -56,7 +56,22 @@ namespace DataAccess
             return pro;
         }
 
-        public IEnumerable<Product> GetProductByName(String name)
+        public Product GetProductByName(String name)
+        {
+            var pro = new Product();
+            try
+            {
+                using var context = new ShoeManagementContext();
+                pro = context.Products.SingleOrDefault(pro => (pro.ProductName.Equals(name) && pro.Status == true));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return pro;
+        }
+
+        public IEnumerable<Product> GetProductsByName(String name)
         {
             var pro = new List<Product>();
             try
