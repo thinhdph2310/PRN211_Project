@@ -12,7 +12,6 @@ namespace ShoeManagementApp
     {
         IProductRepository productRepository = new ProductRepository();
         BindingSource productSource;
-        private ProgressBar progressBar1;
         Boolean sort = true;
         public User currentUser { get; set; }
         public frmProduct()
@@ -86,7 +85,15 @@ namespace ShoeManagementApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            var newWindow = new frmProductAdd()
+            {
+                currentUser = this.currentUser
+            };
+            if (newWindow.ShowDialog() == DialogResult.OK)
+            {
+                LoadProductList(productRepository.GetProducts());
+                productSource.Position = productSource.Count - 1;
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -104,6 +111,8 @@ namespace ShoeManagementApp
                 MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -138,7 +147,7 @@ namespace ShoeManagementApp
             }
             else
             {
-                LoadProductList(productRepository.GetProductByName(search));
+                LoadProductList(productRepository.GetProductsByName(search));
                 dgvProduct.ClearSelection();
             }
         }
@@ -164,5 +173,33 @@ namespace ShoeManagementApp
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var pro = GetProductObject();
+                if (pro == null)
+                {
+                    MessageBox.Show("You must select a product first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    var newWindow = new frmProductUpdate()
+                    {
+                        UpdateInfor = GetProductObject(),
+                        currentUser = this.currentUser
+                    };
+                    if (newWindow.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadProductList(productRepository.GetProducts());
+                        productSource.Position = productSource.Count - 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("You must select a product first", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

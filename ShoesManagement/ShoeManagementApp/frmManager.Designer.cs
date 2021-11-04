@@ -55,7 +55,7 @@
             this.btnProduct.Location = new System.Drawing.Point(69, 284);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(245, 47);
-            this.btnProduct.TabIndex = 5;
+            this.btnProduct.TabIndex = 1;
             this.btnProduct.Text = "Product Manage";
             this.btnProduct.UseVisualStyleBackColor = false;
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
@@ -72,7 +72,7 @@
             this.btnLogout.Location = new System.Drawing.Point(69, 356);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(245, 47);
-            this.btnLogout.TabIndex = 5;
+            this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogin_Click);
