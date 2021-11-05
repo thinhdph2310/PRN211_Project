@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessObject;
+using DataAccess.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,10 @@ namespace DataAccess.Repository
 {
     public interface IOrderDetailRepository
     {
+        IEnumerable<OrderDetailProduct> GetCustomerOrders(int id);
+        IEnumerable<OrderDetail> GetByOrderId(int OrderId);
+        OrderDetail GetByOrderIdAndProductId(int OrderId, int ProductId);
+        void UpdateOrderDetail(OrderDetail order);
+        void DeleteOrderDetail(int OrderId, int ProductId);
     }
 }

@@ -26,5 +26,47 @@ namespace ShoeManagementApp
             frmLogin newWindow = new frmLogin();
             newWindow.Show();
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmOrder newWindow = new frmOrder
+            {
+                currentUser = this.currentUser
+            };
+            this.currentUser = null;
+            newWindow.Show();
+        }
+
+        private void frmStaff_Load(object sender, EventArgs e)
+        {
+            if (currentUser == null)
+            {
+                MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmStaffProduct newWindow = new frmStaffProduct
+            {
+                currentUser = this.currentUser
+            };
+            this.currentUser = null;
+            newWindow.Show();
+        }
+
+        private void btnNewOrder_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmNewOrder newWindow = new frmNewOrder
+            {
+                currentUser = this.currentUser
+            };
+            this.currentUser = null;
+            newWindow.Show();
+        }
     }
 }

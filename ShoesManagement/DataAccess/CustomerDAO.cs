@@ -25,6 +25,21 @@ namespace DataAccess
                 }
             }
         }
+
+        public IEnumerable<Customer> GetCustomers()
+        {
+            List<Customer> cus = null;
+            try
+            {
+                using var context = new ShoeManagementContext();
+                cus = context.Customers.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return cus;
+        }
         public Customer GetCustomerByID(int id)
         {
             Customer cus = null;
@@ -32,6 +47,36 @@ namespace DataAccess
             {
                 using var context = new ShoeManagementContext();
                 cus = context.Customers.SingleOrDefault(cus => cus.CustomerId == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return cus;
+        }
+
+        public IEnumerable<Customer> GetCustomersByName(string name)
+        {
+            List<Customer> cus = null;
+            try
+            {
+                using var context = new ShoeManagementContext();
+                cus = context.Customers.Where(cus => cus.FullName.ToLower().Contains(name.ToLower())).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return cus;
+        }
+
+        public IEnumerable<Customer> GetCustomerByIDNumber(string IdNumber)
+        {
+            List<Customer> cus = null;
+            try
+            {
+                using var context = new ShoeManagementContext();
+                cus = context.Customers.Where(cus => cus.Idnumber.ToLower().Contains(IdNumber.ToLower())).ToList();
             }
             catch (Exception ex)
             {
