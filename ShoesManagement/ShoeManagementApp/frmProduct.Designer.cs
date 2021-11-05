@@ -57,13 +57,14 @@
             this.dgvProduct.AllowUserToResizeRows = false;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Location = new System.Drawing.Point(513, 103);
+            this.dgvProduct.Location = new System.Drawing.Point(513, 72);
+            this.dgvProduct.MultiSelect = false;
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.RowHeadersWidth = 51;
             this.dgvProduct.RowTemplate.Height = 29;
             this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(668, 361);
+            this.dgvProduct.Size = new System.Drawing.Size(668, 392);
             this.dgvProduct.TabIndex = 0;
             // 
             // txtProductID
@@ -223,7 +224,7 @@
             this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(513, 75);
+            this.btnLoad.Location = new System.Drawing.Point(513, 39);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(111, 27);
             this.btnLoad.TabIndex = 7;
@@ -240,7 +241,7 @@
             this.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSort.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSort.ForeColor = System.Drawing.Color.White;
-            this.btnSort.Location = new System.Drawing.Point(630, 75);
+            this.btnSort.Location = new System.Drawing.Point(630, 39);
             this.btnSort.Name = "btnSort";
             this.btnSort.Size = new System.Drawing.Size(111, 27);
             this.btnSort.TabIndex = 7;
@@ -251,7 +252,7 @@
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Location = new System.Drawing.Point(817, 75);
+            this.txtSearch.Location = new System.Drawing.Point(817, 39);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(247, 27);
             this.txtSearch.TabIndex = 8;
@@ -265,7 +266,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(1070, 75);
+            this.btnSearch.Location = new System.Drawing.Point(1070, 39);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(111, 27);
             this.btnSearch.TabIndex = 7;
@@ -278,7 +279,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(817, 47);
+            this.label5.Location = new System.Drawing.Point(817, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 25);
             this.label5.TabIndex = 2;

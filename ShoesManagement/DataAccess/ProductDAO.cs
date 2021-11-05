@@ -77,7 +77,7 @@ namespace DataAccess
             try
             {
                 using var context = new ShoeManagementContext();
-                pro = context.Products.Where(pro => (pro.ProductName.Contains(name) && pro.Status == true)).ToList();
+                pro = context.Products.Where(pro => (pro.ProductName.ToLower().Contains(name.ToLower()) && pro.Status == true)).ToList();
             }
             catch (Exception ex)
             {

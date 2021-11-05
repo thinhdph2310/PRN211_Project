@@ -13,5 +13,8 @@ namespace DataAccess.Repository
         void InsertCustomer(Customer cus);
         void DeleteCustomer(int id);
         void UpdateCustomer(Customer cus);
+        IEnumerable<Customer> GetCustomers();
+        IEnumerable<Customer> GetCustomersByName(string name);
+        IEnumerable<Customer> GetCustomerByIDNumber(string IdNumber);
     }
 }

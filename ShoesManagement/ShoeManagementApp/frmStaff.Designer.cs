@@ -71,6 +71,7 @@ namespace ShoeManagementApp
             this.btnProduct.TabIndex = 4;
             this.btnProduct.Text = "Product List";
             this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // panel1
             // 
@@ -107,6 +108,7 @@ namespace ShoeManagementApp
             this.btnNewOrder.TabIndex = 4;
             this.btnNewOrder.Text = "New Order";
             this.btnNewOrder.UseVisualStyleBackColor = false;
+            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
             // 
             // panel3
             // 
@@ -133,6 +135,7 @@ namespace ShoeManagementApp
             this.btnOrder.TabIndex = 4;
             this.btnOrder.Text = "Order List";
             this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // frmStaff
             // 
@@ -150,6 +153,7 @@ namespace ShoeManagementApp
             this.Name = "frmStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmStaff";
+            this.Load += new System.EventHandler(this.frmStaff_Load);
             this.ResumeLayout(false);
 
         }

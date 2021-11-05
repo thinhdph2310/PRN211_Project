@@ -46,6 +46,7 @@ namespace ShoeManagementApp
 
                 dgvProduct.DataSource = null;
                 dgvProduct.DataSource = productSource;
+                dgvProduct.Columns["Status"].Visible = false;
                 if (products.Count() == 0)
                 {
                     ClearText();
@@ -117,13 +118,14 @@ namespace ShoeManagementApp
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            txtSearch.Text = String.Empty;
             LoadProductList(productRepository.GetProducts());
             dgvProduct.ClearSelection();
         }
 
         private void btnSort_Click(object sender, EventArgs e)
         {
-            List<Product> list = productRepository.GetProducts().OrderBy(pro => pro.ProductId).ToList<Product>();
+            var list = productRepository.GetProducts().OrderBy(pro => pro.ProductId).ToList<Product>();
             if (sort == false)
             {
                 LoadProductList(list);

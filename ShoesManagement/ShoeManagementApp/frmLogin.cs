@@ -47,7 +47,12 @@ namespace ShoeManagementApp
                     }
                     else if (user.RoleId == 3)
                     {
-
+                        frmStaff newWindow = new frmStaff
+                        {
+                            currentUser = user
+                        };
+                        this.Hide();
+                        newWindow.Show();
                     }
                 }
             }
