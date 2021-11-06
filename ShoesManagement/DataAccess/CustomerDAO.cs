@@ -55,6 +55,7 @@ namespace DataAccess
             return cus;
         }
 
+
         public IEnumerable<Customer> GetCustomersByName(string name)
         {
             List<Customer> cus = null;
@@ -70,13 +71,28 @@ namespace DataAccess
             return cus;
         }
 
-        public IEnumerable<Customer> GetCustomerByIDNumber(string IdNumber)
+        public IEnumerable<Customer> GetCustomersByIDNumber(string IdNumber)
         {
             List<Customer> cus = null;
             try
             {
                 using var context = new ShoeManagementContext();
                 cus = context.Customers.Where(cus => cus.Idnumber.ToLower().Contains(IdNumber.ToLower())).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return cus;
+        }
+
+        public Customer GetCustomerByIDNumber(string IdNumber)
+        {
+            Customer cus = null;
+            try
+            {
+                using var context = new ShoeManagementContext();
+                cus = context.Customers.SingleOrDefault(cus => cus.Idnumber.ToLower().Equals(IdNumber.ToLower()));
             }
             catch (Exception ex)
             {

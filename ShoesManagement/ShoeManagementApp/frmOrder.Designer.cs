@@ -113,7 +113,7 @@ namespace ShoeManagementApp
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(67, 27);
             this.btnLoad.TabIndex = 13;
-            this.btnLoad.Text = "Load";
+            this.btnLoad.Text = "Refresh";
             this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
@@ -384,7 +384,7 @@ namespace ShoeManagementApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(250)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1400, 725);
             this.Controls.Add(this.dgvOrderDetail);
             this.Controls.Add(this.btnDelete);

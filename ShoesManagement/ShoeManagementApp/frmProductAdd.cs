@@ -17,6 +17,7 @@ namespace ShoeManagementApp
         IProductRepository productRepository = new ProductRepository();
         public Product UpdateInfor { get; set; }
         public User currentUser { get; set; }
+        public frmProduct oldWindow { get; set; }
         public frmProductAdd()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace ShoeManagementApp
             String productName = txtProductName.Text.Trim();
             if (String.IsNullOrEmpty(productName))
             {
-                message += "Your Email is invalid\n";
+                message += "Your Product Name is invalid\n";
                 isValid = false;
             }
             else if (productRepository.GetProductByName(productName) != null)
@@ -38,7 +39,7 @@ namespace ShoeManagementApp
             }
             if (String.IsNullOrEmpty(txtPrice.Text))
             {
-                message += "Your Password is invalid\n";
+                message += "Your Price is invalid\n";
                 isValid = false;
             }
             else
@@ -51,7 +52,7 @@ namespace ShoeManagementApp
                 }
                 else if (unitNumber <= 0)
                 {
-                    message += "Unit Price cann't be negative\n";
+                    message += "Price can't be negative\n";
                     isValid = false;
                 }
             }
@@ -96,6 +97,7 @@ namespace ShoeManagementApp
                     };
                     productRepository.InsertProduct(product);
                     MessageBox.Show("Added successfully, press load to refresh data", "Message", MessageBoxButtons.OK);
+                    oldWindow.LoadProductList(productRepository.GetProducts());
                     Close();
                 }
                 catch (Exception ex)

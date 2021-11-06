@@ -37,7 +37,8 @@ namespace DataAccess
                     context.Products,
                     order => order.ProductId,
                     pro => pro.ProductId,
-                    (order, pro) => new OrderDetailProduct {
+                    (order, pro) => new OrderDetailProduct
+                    {
                         ProductName = pro.ProductName,
                         Quantity = order.Quantity,
                         Price = pro.Price,
@@ -80,6 +81,19 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
             return order;
+        }
+        public void AddNew(OrderDetail order)
+        {
+            try
+            {
+                using var context = new ShoeManagementContext();
+                context.OrderDetails.Add(order);
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void Remove(int OrderId, int ProductId)

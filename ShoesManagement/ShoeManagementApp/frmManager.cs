@@ -19,14 +19,6 @@ namespace ShoeManagementApp
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            this.currentUser = null;
-            this.Hide();
-            frmLogin newWindow = new frmLogin();
-            newWindow.Show();
-        }
-
         private void btnProduct_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -45,6 +37,14 @@ namespace ShoeManagementApp
                 MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.currentUser = null;
+            this.Hide();
+            frmLogin newWindow = new frmLogin();
+            newWindow.Show();
         }
     }
 }

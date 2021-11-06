@@ -55,6 +55,8 @@
             this.dgvProduct.AllowUserToDeleteRows = false;
             this.dgvProduct.AllowUserToResizeColumns = false;
             this.dgvProduct.AllowUserToResizeRows = false;
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct.Location = new System.Drawing.Point(513, 72);
@@ -228,7 +230,7 @@
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(111, 27);
             this.btnLoad.TabIndex = 7;
-            this.btnLoad.Text = "Load";
+            this.btnLoad.Text = "Refresh";
             this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
@@ -289,8 +291,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1243, 520);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(250)))), ((int)(((byte)(222)))));
+            this.ClientSize = new System.Drawing.Size(1243, 505);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnSort);

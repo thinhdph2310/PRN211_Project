@@ -11,12 +11,21 @@ using System.Windows.Forms;
 
 namespace ShoeManagementApp
 {
-    public partial class frmStaff : Form
+    public partial class frmAdmin : Form
     {
         public User currentUser { get; set; }
-        public frmStaff()
+        public frmAdmin()
         {
             InitializeComponent();
+        }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+            if (currentUser == null)
+            {
+                MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -30,7 +39,7 @@ namespace ShoeManagementApp
         private void btnOrder_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmOrder newWindow = new frmOrder
+            frmReportByYear newWindow = new frmReportByYear
             {
                 currentUser = this.currentUser
             };
@@ -38,19 +47,10 @@ namespace ShoeManagementApp
             newWindow.Show();
         }
 
-        private void frmStaff_Load(object sender, EventArgs e)
-        {
-            if (currentUser == null)
-            {
-                MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Application.Exit();
-            }
-        }
-
-        private void btnProduct_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmStaffProduct newWindow = new frmStaffProduct
+            frmReportByMonth newWindow = new frmReportByMonth
             {
                 currentUser = this.currentUser
             };
@@ -58,21 +58,10 @@ namespace ShoeManagementApp
             newWindow.Show();
         }
 
-        private void btnNewOrder_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmNewOrder newWindow = new frmNewOrder
-            {
-                currentUser = this.currentUser
-            };
-            this.currentUser = null;
-            newWindow.Show();
-        }
-
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmCustomer newWindow = new frmCustomer
+            frmReportByDay newWindow = new frmReportByDay
             {
                 currentUser = this.currentUser
             };

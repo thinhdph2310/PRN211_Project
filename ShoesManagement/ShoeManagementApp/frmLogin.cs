@@ -34,7 +34,12 @@ namespace ShoeManagementApp
                 {
                     if (user.RoleId == 1)
                     {
-
+                        frmAdmin newWindow = new frmAdmin
+                        {
+                            currentUser = user
+                        };
+                        this.Hide();
+                        newWindow.Show();
                     }
                     else if (user.RoleId == 2)
                     {
@@ -54,6 +59,10 @@ namespace ShoeManagementApp
                         this.Hide();
                         newWindow.Show();
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Your Username or Password are incorrect", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

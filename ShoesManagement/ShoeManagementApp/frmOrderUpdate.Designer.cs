@@ -43,8 +43,6 @@ namespace ShoeManagementApp
             this.txtOrderID = new System.Windows.Forms.TextBox();
             this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -206,39 +204,6 @@ namespace ShoeManagementApp
             this.label8.TabIndex = 37;
             this.label8.Text = "Order Details";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(109)))));
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(446, 407);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(482, 58);
-            this.btnSave.TabIndex = 39;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(109)))));
-            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(41, 407);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(350, 58);
-            this.btnBack.TabIndex = 40;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            // 
             // txtProductName
             // 
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -331,13 +296,11 @@ namespace ShoeManagementApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1062, 494);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(250)))), ((int)(((byte)(222)))));
+            this.ClientSize = new System.Drawing.Size(1062, 417);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.txtQuantity2);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvOrderDetail);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label8);
@@ -384,8 +347,6 @@ namespace ShoeManagementApp
         private System.Windows.Forms.TextBox txtOrderID;
         private System.Windows.Forms.DataGridView dgvOrderDetail;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtPrice;
