@@ -31,6 +31,7 @@ namespace ShoeManagementApp
                 dgvProduct.DataSource = null;
                 dgvProduct.DataSource = productSource;
                 dgvProduct.Columns["Status"].Visible = false;
+                dgvProduct.Columns["OrderDetails"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -45,6 +46,8 @@ namespace ShoeManagementApp
                 MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
+            LoadProductList(productRepository.GetProducts());
+            dgvProduct.ClearSelection();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

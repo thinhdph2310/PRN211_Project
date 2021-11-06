@@ -146,5 +146,10 @@ namespace ShoeManagementApp
                 MessageBox.Show("You haven't select any detail", "Minus Error");
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

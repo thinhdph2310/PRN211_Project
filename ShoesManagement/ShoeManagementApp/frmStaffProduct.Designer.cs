@@ -111,7 +111,7 @@ namespace ShoeManagementApp
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(111, 27);
             this.btnLoad.TabIndex = 13;
-            this.btnLoad.Text = "Load";
+            this.btnLoad.Text = "Refresh";
             this.btnLoad.UseVisualStyleBackColor = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
@@ -132,6 +132,8 @@ namespace ShoeManagementApp
             this.dgvProduct.AllowUserToDeleteRows = false;
             this.dgvProduct.AllowUserToResizeColumns = false;
             this.dgvProduct.AllowUserToResizeRows = false;
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProduct.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.White;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct.Enabled = false;

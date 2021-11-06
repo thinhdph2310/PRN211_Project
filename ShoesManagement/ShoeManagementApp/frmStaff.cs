@@ -68,5 +68,16 @@ namespace ShoeManagementApp
             this.currentUser = null;
             newWindow.Show();
         }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCustomer newWindow = new frmCustomer
+            {
+                currentUser = this.currentUser
+            };
+            this.currentUser = null;
+            newWindow.Show();
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace ShoeManagementApp
             String productName = txtProductName.Text.Trim();
             if (String.IsNullOrEmpty(productName))
             {
-                message += "Your Email is invalid\n";
+                message += "Product Name is invalid\n";
                 isValid = false;
             }else if (productRepository.GetProductByName(productName) != null)
             {
@@ -37,7 +37,7 @@ namespace ShoeManagementApp
             }
             if (String.IsNullOrEmpty(txtPrice.Text))
             {
-                message += "Your Password is invalid\n";
+                message += "Price is invalid\n";
                 isValid = false;
             }
             else
@@ -49,7 +49,7 @@ namespace ShoeManagementApp
                     isValid = false;
                 }else if (unitNumber <= 0)
                 {
-                    message += "Unit Price cann't be negative\n";
+                    message += "Price can't be negative\n";
                     isValid = false;
                 }
             }

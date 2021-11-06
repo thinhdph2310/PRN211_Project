@@ -15,6 +15,7 @@ namespace DataAccess.Repository
         public void DeleteCustomer(int id) => CustomerDAO.Instance.Remove(id);
         public IEnumerable<Customer> GetCustomers() => CustomerDAO.Instance.GetCustomers();
         public IEnumerable<Customer> GetCustomersByName(string name) => CustomerDAO.Instance.GetCustomersByName(name);
-        public IEnumerable<Customer> GetCustomerByIDNumber(string IdNumber) => CustomerDAO.Instance.GetCustomerByIDNumber(IdNumber);
+        public IEnumerable<Customer> GetCustomersByIDNumber(string IdNumber) => CustomerDAO.Instance.GetCustomersByIDNumber(IdNumber);
+        public Customer GetCustomerByIDNumber(string IdNumber) => CustomerDAO.Instance.GetCustomerByIDNumber(IdNumber);
     }
 }

@@ -14,6 +14,10 @@ namespace DataAccess.DataAccess
         public decimal Total { get; set; }
         public bool Status { get; set; }
 
+        public void CalculateTotal()
+        {
+            this.Total = this.Quantity * this.Price;
+        }
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
     }

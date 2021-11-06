@@ -47,6 +47,7 @@ namespace ShoeManagementApp
                 dgvProduct.DataSource = null;
                 dgvProduct.DataSource = productSource;
                 dgvProduct.Columns["Status"].Visible = false;
+                dgvProduct.Columns["OrderDetails"].Visible = false;
                 if (products.Count() == 0)
                 {
                     ClearText();

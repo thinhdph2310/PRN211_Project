@@ -113,6 +113,17 @@ namespace ShoeManagementApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap png_clipart_computer_icons_customer_service_icon_design_user_business_blue_service {
+            get {
+                object obj = ResourceManager.GetObject("png-clipart-computer-icons-customer-service-icon-design-user-business-blue-servic" +
+                        "e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shoe_icon {
             get {
                 object obj = ResourceManager.GetObject("shoe-icon", resourceCulture);

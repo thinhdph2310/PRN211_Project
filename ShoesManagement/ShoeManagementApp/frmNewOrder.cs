@@ -31,6 +31,8 @@ namespace ShoeManagementApp
 
                 dgvCustomer.DataSource = null;
                 dgvCustomer.DataSource = customerSource;
+                dgvCustomer.Columns["Orders"].Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -75,10 +77,6 @@ namespace ShoeManagementApp
             newWindow.Show();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -98,9 +96,51 @@ namespace ShoeManagementApp
                 }
                 if (searchCat.ToString().Equals("ID"))
                 {
-                    LoadCustomerList(customerRepository.GetCustomerByIDNumber(search));
+                    LoadCustomerList(customerRepository.GetCustomersByIDNumber(search));
                     dgvCustomer.ClearSelection();
                 }
+            }
+        }
+
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            frmOrderNewCustomer newWindow = new frmOrderNewCustomer
+            {
+                currentUser = this.currentUser,
+                oldWindow = this
+            };
+            newWindow.Show();
+        }
+
+        private void btnCreate_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedrowindex = dgvCustomer.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgvCustomer.Rows[selectedrowindex];
+                string CustomerId = Convert.ToString(selectedRow.Cells["CustomerId"].Value);
+                string FullName = Convert.ToString(selectedRow.Cells["FullName"].Value);
+                string Phone = Convert.ToString(selectedRow.Cells["Phone"].Value);
+                string Idnumber = Convert.ToString(selectedRow.Cells["Idnumber"].Value);
+                Customer cus = new Customer
+                {
+                    CustomerId = int.Parse(CustomerId),
+                    FullName = FullName,
+                    Phone = Phone,
+                    Idnumber = Idnumber
+                };
+                frmOrderProduct newWindow = new frmOrderProduct()
+                {
+                    customerInfor = cus,
+                    currentUser = this.currentUser
+                };
+                this.currentUser = null;
+                this.Hide();
+                newWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("You haven't select any customer", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
