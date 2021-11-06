@@ -226,7 +226,6 @@ namespace ShoeManagementApp
             this.dgvOrderDetail.Size = new System.Drawing.Size(482, 392);
             this.dgvOrderDetail.TabIndex = 45;
             this.dgvOrderDetail.DataSourceChanged += new System.EventHandler(this.dgvOrderDetail_DataSourceChanged);
-            this.dgvOrderDetail.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderDetail_CellValueChanged);
             // 
             // label1
             // 
@@ -300,7 +299,7 @@ namespace ShoeManagementApp
             this.btnNext.TabIndex = 11;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // label3
             // 
@@ -399,7 +398,7 @@ namespace ShoeManagementApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(250)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1228, 588);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnAdd);

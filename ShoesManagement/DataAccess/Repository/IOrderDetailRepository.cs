@@ -13,6 +13,7 @@ namespace DataAccess.Repository
         IEnumerable<OrderDetailProduct> GetCustomerOrders(int id);
         IEnumerable<OrderDetail> GetByOrderId(int OrderId);
         OrderDetail GetByOrderIdAndProductId(int OrderId, int ProductId);
+        void InsertOrderDetail(OrderDetail order);
         void UpdateOrderDetail(OrderDetail order);
         void DeleteOrderDetail(int OrderId, int ProductId);
     }

@@ -15,11 +15,13 @@ namespace ShoeManagementApp
 {
     public partial class frmOrderUpdate : Form
     {
+        IOrderRepository orderRepository = new OrderRepository();
         IOrderDetailRepository orderDetailRepository = new OrderDetailRepository();
         IProductRepository productRepository = new ProductRepository();
         BindingSource orderDetailSource;
         public CustomerOrder cusOrderInfor { get; set; }
         public User currentUser { get; set; }
+        public frmOrder oldWindow {get; set;}
         public frmOrderUpdate()
         {
             InitializeComponent();
@@ -103,6 +105,11 @@ namespace ShoeManagementApp
             {
                 MessageBox.Show("You haven't select any detail", "Minus Error");
             }
+        }
+
+        private void refreshOldWindow()
+        {
+            oldWindow.LoadOrderList(orderRepository.GetCustomerOrders());
         }
 
         private void btnMinus_Click(object sender, EventArgs e)

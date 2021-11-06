@@ -17,6 +17,7 @@ namespace ShoeManagementApp
         IProductRepository productRepository = new ProductRepository();
         public User currentUser { get; set; }
         public Product UpdateInfor { get; set; }
+        public frmProduct oldWindow { get; set; }
         public frmProductUpdate()
         {
             InitializeComponent();
@@ -96,6 +97,7 @@ namespace ShoeManagementApp
                     productRepository.UpdateProduct(product);
                     MessageBox.Show("Updated successfully, press load to refresh data", "Message", MessageBoxButtons.OK);
                     this.currentUser = null;
+                    oldWindow.LoadProductList(productRepository.GetProducts());
                     Close();
                 }
                 catch (Exception ex)

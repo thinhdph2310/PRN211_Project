@@ -50,7 +50,7 @@ namespace ShoeManagementApp
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(46, 599);
+            this.btnLogout.Location = new System.Drawing.Point(163, 599);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(476, 47);
             this.btnLogout.TabIndex = 5;
@@ -67,7 +67,7 @@ namespace ShoeManagementApp
             this.btnProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProduct.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProduct.ForeColor = System.Drawing.Color.White;
-            this.btnProduct.Location = new System.Drawing.Point(46, 247);
+            this.btnProduct.Location = new System.Drawing.Point(163, 247);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(200, 47);
             this.btnProduct.TabIndex = 4;
@@ -80,7 +80,7 @@ namespace ShoeManagementApp
             this.panel1.BackgroundImage = global::ShoeManagementApp.Properties.Resources.shoe_icon;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(46, 32);
+            this.panel1.Location = new System.Drawing.Point(163, 32);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 200);
             this.panel1.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace ShoeManagementApp
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(322, 32);
+            this.panel2.Location = new System.Drawing.Point(439, 32);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 200);
             this.panel2.TabIndex = 3;
@@ -104,7 +104,7 @@ namespace ShoeManagementApp
             this.btnNewOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewOrder.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNewOrder.ForeColor = System.Drawing.Color.White;
-            this.btnNewOrder.Location = new System.Drawing.Point(322, 247);
+            this.btnNewOrder.Location = new System.Drawing.Point(439, 247);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(200, 47);
             this.btnNewOrder.TabIndex = 4;
@@ -117,7 +117,7 @@ namespace ShoeManagementApp
             this.panel3.BackgroundImage = global::ShoeManagementApp.Properties.Resources._470_4708030_my_order_svg_png_icon_free_download_my_order_icon_png2;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(322, 313);
+            this.panel3.Location = new System.Drawing.Point(439, 313);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 200);
             this.panel3.TabIndex = 3;
@@ -131,7 +131,7 @@ namespace ShoeManagementApp
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnOrder.ForeColor = System.Drawing.Color.White;
-            this.btnOrder.Location = new System.Drawing.Point(322, 530);
+            this.btnOrder.Location = new System.Drawing.Point(439, 530);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(200, 47);
             this.btnOrder.TabIndex = 4;
@@ -144,7 +144,7 @@ namespace ShoeManagementApp
             this.panel4.BackgroundImage = global::ShoeManagementApp.Properties.Resources.png_clipart_computer_icons_customer_service_icon_design_user_business_blue_service;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(46, 313);
+            this.panel4.Location = new System.Drawing.Point(163, 313);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 200);
             this.panel4.TabIndex = 3;
@@ -158,7 +158,7 @@ namespace ShoeManagementApp
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnCustomer.Location = new System.Drawing.Point(46, 530);
+            this.btnCustomer.Location = new System.Drawing.Point(163, 530);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(200, 47);
             this.btnCustomer.TabIndex = 4;
@@ -170,8 +170,8 @@ namespace ShoeManagementApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(575, 677);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(250)))), ((int)(((byte)(222)))));
+            this.ClientSize = new System.Drawing.Size(805, 677);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnCustomer);
             this.Controls.Add(this.btnOrder);

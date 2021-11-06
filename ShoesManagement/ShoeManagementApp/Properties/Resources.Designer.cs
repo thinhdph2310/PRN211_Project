@@ -124,6 +124,16 @@ namespace ShoeManagementApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngtree_vector_statistics_icon_png_image_322171 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-vector-statistics-icon-png-image_322171", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shoe_icon {
             get {
                 object obj = ResourceManager.GetObject("shoe-icon", resourceCulture);

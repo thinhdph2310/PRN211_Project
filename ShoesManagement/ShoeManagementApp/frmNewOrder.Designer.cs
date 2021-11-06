@@ -200,7 +200,7 @@ namespace ShoeManagementApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(250)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(570, 509);
             this.Controls.Add(this.btnNewCustomer);
             this.Controls.Add(this.comboSearch);

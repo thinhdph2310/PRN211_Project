@@ -166,7 +166,7 @@ namespace ShoeManagementApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(250)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(509, 450);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -181,6 +181,7 @@ namespace ShoeManagementApp
             this.Controls.Add(this.txtCustomerID);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
             this.Name = "frmCustomerAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCustomerAdd";
             this.Load += new System.EventHandler(this.frmCustomerAdd_Load);
             this.ResumeLayout(false);

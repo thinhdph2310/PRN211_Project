@@ -61,6 +61,8 @@ namespace ShoeManagementApp
 
                 dgvOrder.DataSource = null;
                 dgvOrder.DataSource = orderSource;
+                dgvOrder.ClearSelection();
+                dgvOrderDetail.DataSource = null;
                 if (orders.Count() == 0)
                 {
                     ClearText();
@@ -85,6 +87,7 @@ namespace ShoeManagementApp
             {
                 orderDetailSource = new BindingSource();
                 orderDetailSource.DataSource = orderDetailProducts;
+                
                 dgvOrderDetail.DataSource = orderDetailSource;
             }
             catch (Exception ex)
@@ -96,8 +99,7 @@ namespace ShoeManagementApp
         {
             txtSearch.Text = String.Empty;
             LoadOrderList(orderRepository.GetCustomerOrders());
-            dgvOrder.ClearSelection();
-            dgvOrderDetail.DataSource = null;
+            
         }
 
         private CustomerOrder GetCustomerOrderObject()
@@ -133,8 +135,7 @@ namespace ShoeManagementApp
                     orderRepository.DeleteOrder(cusOrder.OrderId);
                     txtSearch.Text = String.Empty;
                     LoadOrderList(orderRepository.GetCustomerOrders());
-                    dgvOrder.ClearSelection();
-                    dgvOrderDetail.DataSource = null;
+                    
                 }
             }
             catch (Exception ex)
@@ -157,13 +158,14 @@ namespace ShoeManagementApp
                     var newWindow = new frmOrderUpdate()
                     {
                         cusOrderInfor = GetCustomerOrderObject(),
-                        currentUser = this.currentUser
+                        currentUser = this.currentUser,
+                        oldWindow = this
                     };
                     if (newWindow.ShowDialog() == DialogResult.OK)
                     {
                         LoadOrderList(orderRepository.GetCustomerOrders());
                         orderSource.Position = orderSource.Count - 1;
-                        dgvOrderDetail.DataSource = null;
+                        
                     }
                 }
             }
@@ -182,6 +184,9 @@ namespace ShoeManagementApp
             }
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
+            txtSearch.Text = String.Empty;
+            LoadOrderList(orderRepository.GetCustomerOrders());
+            
         }
 
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -204,14 +209,12 @@ namespace ShoeManagementApp
                 if (searchCat.ToString().Equals("Name"))
                 {
                     LoadOrderList(orderRepository.GetCustomerOrdersByName(search));
-                    dgvOrder.ClearSelection();
-                    dgvOrderDetail.DataSource = null;
+                    
                 }
                 if (searchCat.ToString().Equals("ID"))
                 {
                     LoadOrderList(orderRepository.GetCustomerOrdersById(search));
-                    dgvOrder.ClearSelection();
-                    dgvOrderDetail.DataSource = null;
+                    
                 }
             }
             
@@ -231,8 +234,8 @@ namespace ShoeManagementApp
                 LoadOrderList(list);
                 sort = false;
             }
-            dgvOrder.ClearSelection();
-            dgvOrderDetail.DataSource = null;
+            
+            
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

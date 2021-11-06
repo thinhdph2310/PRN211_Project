@@ -15,6 +15,9 @@
     <Compile Update="frmProductUpdate - Copy.Designer.cs">
       <DependentUpon>frmProductUpdate.Designer.cs</DependentUpon>
     </Compile>
+    <Compile Update="frmReportByYear - Copy.Designer.cs">
+      <DependentUpon>frmReportByYear.Designer.cs</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -25,6 +28,9 @@
   <ItemGroup>
     <EmbeddedResource Update="frmProductUpdate - Copy.resx">
       <DependentUpon>frmProductUpdate.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="frmReportByYear - Copy.resx">
+      <DependentUpon>frmReportByYear.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

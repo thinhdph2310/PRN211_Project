@@ -48,6 +48,8 @@ namespace ShoeManagementApp
                 dgvProduct.DataSource = productSource;
                 dgvProduct.Columns["Status"].Visible = false;
                 dgvProduct.Columns["OrderDetails"].Visible = false;
+                dgvProduct.ClearSelection();
+
                 if (products.Count() == 0)
                 {
                     ClearText();
@@ -89,7 +91,8 @@ namespace ShoeManagementApp
         {
             var newWindow = new frmProductAdd()
             {
-                currentUser = this.currentUser
+                currentUser = this.currentUser,
+                oldWindow = this
             };
             if (newWindow.ShowDialog() == DialogResult.OK)
             {
@@ -115,13 +118,13 @@ namespace ShoeManagementApp
             }
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
+            LoadProductList(productRepository.GetProducts());
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
             txtSearch.Text = String.Empty;
             LoadProductList(productRepository.GetProducts());
-            dgvProduct.ClearSelection();
         }
 
         private void btnSort_Click(object sender, EventArgs e)
@@ -138,7 +141,7 @@ namespace ShoeManagementApp
                 LoadProductList(list);
                 sort = false;
             }
-            dgvProduct.ClearSelection();
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -151,7 +154,6 @@ namespace ShoeManagementApp
             else
             {
                 LoadProductList(productRepository.GetProductsByName(search));
-                dgvProduct.ClearSelection();
             }
         }
 

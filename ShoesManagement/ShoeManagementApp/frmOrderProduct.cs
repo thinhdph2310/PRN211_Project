@@ -259,12 +259,6 @@ namespace ShoeManagementApp
             currentCart.RemoveAt(selectedrowindex);
             LoadOrderDetailsProductList(currentDisplay);
         }
-
-        private void dgvOrderDetail_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void dgvOrderDetail_DataSourceChanged(object sender, EventArgs e)
         {
             if (currentCart.Count != 0)
@@ -279,6 +273,28 @@ namespace ShoeManagementApp
             else
             {
                 txtTotalMoney.Text = string.Empty;
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if(currentCart.Count == 0)
+            {
+                MessageBox.Show("No product in order details to make bill", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                frmBill newWindow = new frmBill
+                {
+                    cusInfor = this.customerInfor,
+                    currentUser = this.currentUser,
+                    currentCart = this.currentCart,
+                    currentDisplay = this.currentDisplay,
+                    oldWindow = this
+                };
+                this.currentUser = null;
+                this.Hide();
+                newWindow.Show();
             }
         }
     }
