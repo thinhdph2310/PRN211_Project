@@ -53,16 +53,24 @@ namespace ShoeManagementApp
 
         private void frmBill_Load(object sender, EventArgs e)
         {
-            LoadOrderDetailsProductList(currentDisplay);
-            lbName.Text = cusInfor.FullName;
-            lbID.Text = cusInfor.Idnumber;
-            lbPhone.Text = cusInfor.Phone;
-            decimal total = 0;
-            foreach (var item in currentCart)
+            if(currentUser == null)
             {
-                total += item.Total;
+                MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
             }
-            txtTotalMoney.Text = total.ToString();
+            else
+            {
+                LoadOrderDetailsProductList(currentDisplay);
+                lbName.Text = cusInfor.FullName;
+                lbID.Text = cusInfor.Idnumber;
+                lbPhone.Text = cusInfor.Phone;
+                decimal total = 0;
+                foreach (var item in currentCart)
+                {
+                    total += item.Total;
+                }
+                txtTotalMoney.Text = total.ToString();
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {

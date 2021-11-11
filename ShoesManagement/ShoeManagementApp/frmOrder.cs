@@ -182,11 +182,13 @@ namespace ShoeManagementApp
                 MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
-            btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
-            txtSearch.Text = String.Empty;
-            LoadOrderList(orderRepository.GetCustomerOrders());
-            
+            else
+            {
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+                txtSearch.Text = String.Empty;
+                LoadOrderList(orderRepository.GetCustomerOrders());
+            }
         }
 
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)

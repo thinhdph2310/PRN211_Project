@@ -45,6 +45,7 @@ namespace ShoeManagementApp
 
                 dgvOrderDetail.DataSource = null;
                 dgvOrderDetail.DataSource = orderDetailSource;
+                dgvOrderDetail.ClearSelection();
                 if (orders.Count() == 0)
                 {
                     btnRemove.Enabled = false;
@@ -81,7 +82,7 @@ namespace ShoeManagementApp
                 txtTotal.Text = cusOrderInfor.Total.ToString();
                 txtOrderDate.Text = cusOrderInfor.OrderDate.ToString();
                 LoadOrderDetailList(orderDetailRepository.GetCustomerOrders(int.Parse(txtOrderID.Text)));
-                dgvOrderDetail.ClearSelection();
+                
             }
         }
 
@@ -98,7 +99,7 @@ namespace ShoeManagementApp
                 orderDetailRepository.DeleteOrderDetail(result.OrderId, result.ProductId);
                 productRepository.UpdateProduct(pro);
                 LoadOrderDetailList(orderDetailRepository.GetCustomerOrders(int.Parse(txtOrderID.Text)));
-                dgvOrderDetail.ClearSelection();
+                
 
             }
             catch (Exception ex)
@@ -126,6 +127,7 @@ namespace ShoeManagementApp
                 string ProductName = Convert.ToString(selectedRow.Cells["ProductName"].Value);
                 Product pro = productRepository.GetProductByName(ProductName);
                 OrderDetail result = orderDetailRepository.GetByOrderIdAndProductId(int.Parse(txtOrderID.Text), pro.ProductId);
+                Order changeTotal = orderRepository.GetOrderByID(int.Parse(txtOrderID.Text));
                 int minus = result.Quantity - int.Parse(txtQuantity2.Text);
                 if (minus < 0)
                 {
@@ -143,9 +145,12 @@ namespace ShoeManagementApp
                         orderDetailRepository.UpdateOrderDetail(result);
                     }
                     result.Quantity = minus;
+                    decimal minusTotal = int.Parse(txtQuantity2.Text) * result.Price;
+                    changeTotal.Total -= minusTotal;
                     productRepository.UpdateProduct(pro);
+                    orderRepository.UpdateOrder(changeTotal);
                     LoadOrderDetailList(orderDetailRepository.GetCustomerOrders(int.Parse(txtOrderID.Text)));
-                    dgvOrderDetail.ClearSelection();
+                    
                 }
             }
             catch (Exception ex)

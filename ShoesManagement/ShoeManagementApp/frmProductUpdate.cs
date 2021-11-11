@@ -31,10 +31,14 @@ namespace ShoeManagementApp
             {
                 message += "Product Name is invalid\n";
                 isValid = false;
-            }else if (productRepository.GetProductByName(productName) != null)
+            }else
             {
-                message += "Product Name is already exist\n";
-                isValid = false;
+                var product = productRepository.GetProductByName(productName);
+                if (product != null && product.ProductId != UpdateInfor.ProductId)
+                {
+                    message += "Product Name is already exist\n";
+                    isValid = false;
+                }
             }
             if (String.IsNullOrEmpty(txtPrice.Text))
             {
@@ -95,7 +99,7 @@ namespace ShoeManagementApp
                         Status = true
                     };
                     productRepository.UpdateProduct(product);
-                    MessageBox.Show("Updated successfully, press load to refresh data", "Message", MessageBoxButtons.OK);
+                    MessageBox.Show("Updated successfully", "Message", MessageBoxButtons.OK);
                     this.currentUser = null;
                     oldWindow.LoadProductList(productRepository.GetProducts());
                     Close();

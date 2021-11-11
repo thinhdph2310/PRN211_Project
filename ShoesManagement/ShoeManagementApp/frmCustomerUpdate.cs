@@ -74,9 +74,12 @@ namespace ShoeManagementApp
             if (currentUser == null)
             {
                 MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Application.Exit();
+                this.Close();
             }
-            RefreshData();
+            else
+            {
+                RefreshData();
+            }
         }
 
         private void label6_Click(object sender, EventArgs e)

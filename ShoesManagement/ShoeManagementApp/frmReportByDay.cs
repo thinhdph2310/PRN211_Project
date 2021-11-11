@@ -51,7 +51,10 @@ namespace ShoeManagementApp
                 MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
-            RefreshData();
+            else
+            {
+                RefreshData();
+            }
         }
 
         private void RefreshData()

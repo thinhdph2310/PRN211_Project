@@ -67,10 +67,13 @@ namespace ShoeManagementApp
                 MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
-            lbCustomerID.Text = customerInfor.Idnumber;
-            lbCustomerName.Text = customerInfor.FullName;
-            LoadProductList(productRepository.GetProducts());
-            dgvProduct.ClearSelection();
+            else
+            {
+                lbCustomerID.Text = customerInfor.Idnumber;
+                lbCustomerName.Text = customerInfor.FullName;
+                LoadProductList(productRepository.GetProducts());
+                dgvProduct.ClearSelection();
+            }
         }
         private void btnLogout_Click(object sender, EventArgs e)
         {
