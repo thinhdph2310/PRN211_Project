@@ -141,6 +141,7 @@ namespace ShoeManagementApp
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BackgroundImage = global::ShoeManagementApp.Properties.Resources.png_clipart_computer_icons_customer_service_icon_design_user_business_blue_service;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;

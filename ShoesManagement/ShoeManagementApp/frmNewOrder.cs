@@ -47,8 +47,11 @@ namespace ShoeManagementApp
                 MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
-            LoadCustomerList(customerRepository.GetCustomers());
-            dgvCustomer.ClearSelection();
+            else
+            {
+                LoadCustomerList(customerRepository.GetCustomers());
+                dgvCustomer.ClearSelection();
+            }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)

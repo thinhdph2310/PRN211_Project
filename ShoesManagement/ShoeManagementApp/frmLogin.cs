@@ -66,5 +66,10 @@ namespace ShoeManagementApp
                 }
             }
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -116,9 +116,12 @@ namespace ShoeManagementApp
                 MessageBox.Show("You're not allowed to use this", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
-            btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
-            LoadProductList(productRepository.GetProducts());
+            else
+            {
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+                LoadProductList(productRepository.GetProducts());
+            }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -192,7 +195,8 @@ namespace ShoeManagementApp
                     var newWindow = new frmProductUpdate()
                     {
                         UpdateInfor = GetProductObject(),
-                        currentUser = this.currentUser
+                        currentUser = this.currentUser,
+                        oldWindow = this
                     };
                     if (newWindow.ShowDialog() == DialogResult.OK)
                     {
